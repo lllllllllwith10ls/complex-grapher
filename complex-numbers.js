@@ -3,8 +3,11 @@ class Complex {
 		this.real = real;
 		this.im = im;
 	}
-	get conjugate() {
+	get conj() {
 		return new Complex(this.real,-this.im);
+	}
+	get abs() {
+		return Complex.power(Complex.mult(this,this.conj),new Complex(1/2,0));
 	}
 	get neg() {
 		return new Complex(-this.real,-this.im);
@@ -45,3 +48,4 @@ class Complex {
 }
 Complex.i = new Complex(0,1);
 Complex.one = new Complex(1,0);
+Complex.zero = new Complex(0,0);
