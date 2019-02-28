@@ -13,7 +13,7 @@ let height = canvas.width;
 let ctx = canvas.getContext('2d');
 
 function iterate(r,i,iterations) {
-	var z = new Complex(0,0);
+	var z = Complex.zero;
 	var c = new Complex(r,i);
 	var n = 0;
 	while(n < iterations && z.abs <= escapeRadius) {
