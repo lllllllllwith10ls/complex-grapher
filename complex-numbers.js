@@ -30,7 +30,7 @@ class Complex {
 	static exp(a) {
 		return new Complex(Math.cos(a.im)*Math.E**a.real,Math.sin(a.im)*Math.E**a.real);
 	}
-	static ln(a) {
+	static log(a) {
 		return new Complex(Math.log(Math.sqrt(a.real**2+a.im**2)),Math.atan2(a.im,a.real));
 	}
 	static power(a,b) {
