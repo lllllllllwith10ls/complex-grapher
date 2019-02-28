@@ -27,7 +27,7 @@ function render() {
 	
 	for(let x=0; x < width; x++) {
 		for(let y=0; y < height; y++) {
-			let n = iterate(x/magnificationFactor+width/2/magnificationFactor+posX,y/magnificationFactor-posY+height/2/magnificationFactor+posY,100);
+			let n = iterate(x/magnificationFactor-width/2/magnificationFactor-posX,y/magnificationFactor-height/2/magnificationFactor-posY,100);
 			if(n === 100) {
 				ctx.fillStyle = "rgb(0,0,0)";
 			} else {
