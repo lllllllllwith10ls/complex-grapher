@@ -5,7 +5,7 @@ var magnificationFactor = 200;
 var posX = 0;
 var posY = 0;
 
-let canvas = document.getElementById("canvasMandelbrot");
+let canvas = document.getElementById("mandelbrot");
 canvas.width  = window.innerWidth;
 canvas.height = window.innerHeight;
 let width  = canvas.width;
