@@ -11,7 +11,6 @@ canvas.height = window.innerHeight;
 let width  = canvas.width;
 let height = canvas.width;
 let ctx = canvas.getContext('2d');
-let image = ctx.createImageData(width, height);
 
 function iterate(r,i,iterations) {
 	var z = new Complex(0,0);
