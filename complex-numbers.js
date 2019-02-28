@@ -7,7 +7,7 @@ class Complex {
 		return new Complex(this.real,-this.im);
 	}
 	get abs() {
-		return Complex.power(Complex.mult(this,this.conj),new Complex(1/2,0));
+		return Math.sqrt(this.real**2+this.im**2);
 	}
 	get neg() {
 		return new Complex(-this.real,-this.im);
