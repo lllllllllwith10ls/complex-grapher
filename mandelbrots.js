@@ -31,7 +31,7 @@ function render() {
 			if(n === 100) {
 				ctx.fillStyle = "rgb(0,0,0)";
 			} else {
-				ctx.fillStyle = "rgb(0,0," + Math.floor(n*255/100) + ")";
+				ctx.fillStyle = "rgb(" + Math.floor(n*255/100) + ",0,0)";
 			}
 			ctx.fillRect(x,y, 1,1);
 		} 
