@@ -31,10 +31,10 @@ class Complex {
 		return new Complex(Math.cos(a.im)*Math.E**a.real,Math.sin(a.im)*Math.E**a.real);
 	}
 	static ln(a) {
-		return new Complex(Math.ln(Math.sqrt(a.real**2+a.im**2)),Math.atan2(a.im,a.real));
+		return new Complex(Math.log(Math.sqrt(a.real**2+a.im**2)),Math.atan2(a.im,a.real));
 	}
 	static power(a,b) {
-		return Complex.exp(Complex.mult(b,Complex.ln(a)));
+		return Complex.exp(Complex.mult(b,Complex.log(a)));
 	}
 	static sin(a) {
 		return Complex.div(Complex.exp(Complex.sub(Complex.mult(a,Complex.i),Complex.mult(a,Complex.i.neg))),new Complex(0,2));
