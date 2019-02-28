@@ -1,36 +1,40 @@
-var escapeRadius = 10.0;
-var mandelbrotColor = [0, 0, 0, 255];
-var colors = [[0,0,0,0]];
+let escapeRadius = 10.0;
+let mandelbrotColor = [0, 0, 0, 255];
+let colors = [[0,0,0,0]];
+var magnificationFactor = 200;
+var posX = 0;
+var posY = 0;
 
-var canvas = document.getElementById("canvasMandelbrot");
+let canvas = document.getElementById("canvasMandelbrot");
 canvas.width  = window.innerWidth;
 canvas.height = window.innerHeight;
-var ctx = canvas.getContext('2d');
-function iterateEquation(Cr, Ci, escapeRadius, iterations)
-{
-  var Zr = 0;
-  var Zi = 0;
-  var Tr = 0;
-  var Ti = 0;
-  var n  = 0;
+let width  = canvas.width;
+let height = canvas.width;
+let ctx = canvas.getContext('2d');
+let image = ctx.createImageData(width, height);
 
-  for ( ; n<iterations && (Tr+Ti)<=escapeRadius; ++n ) {
-    Zi = 2 * Zr * Zi + Ci;
-    Zr = Tr - Ti + Cr;
-    Tr = Zr * Zr;
-    Ti = Zi * Zi;
-  }
+function iterate(r,i,iterations) {
+	var z = new Complex(0,0);
+	var c = new Complex(r,i);
+	var n = 0;
+	while(n < iterations && z.abs <= escapeRadius) {
+		n++; 
+		z = Complex.add(Complex.power(z,2),c);
+	}
 
-  /*
-   * Four more iterations to decrease error term;
-   * see http://linas.org/art-gallery/escape/escape.html
-   */
-  for ( var e=0; e<4; ++e ) {
-    Zi = 2 * Zr * Zi + Ci;
-    Zr = Tr - Ti + Cr;
-    Tr = Zr * Zr;
-    Ti = Zi * Zi;
-  }
-
-  return [n, Tr, Ti];
+	return n;
+}
+function render() {
+	
+	for(let x=0; x < width; x++) {
+		for(let y=0; y < cheight; y++) {
+			let n = iterate(x/magnificationFactor-posX,y/magnificationFactor-posY,100);
+			if(n = 100) {
+				ctx.fillStyle = "rgb(0,0,0)";
+			} else {
+				ctx.fillStyle = "rgb(0,0," + n*255/100 + ")";
+			}
+			ctx.fillRect(x,y, 1,1);
+		} 
+	}
 }
