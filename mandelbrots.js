@@ -32,7 +32,7 @@ function render() {
 				ctx.fillStyle = "hsl(0,0,0)";
 				ctx.fillRect(x,y,1,1);
 			} else {
-				ctx.fillStyle = "hsl(0,255,'+Math.floor(n*255/100)+")";
+				ctx.fillStyle = "hsl(0,255,"+Math.floor(n*255/100)+")";
 				ctx.fillRect(x,y,1,1);
 			}
 		} 
