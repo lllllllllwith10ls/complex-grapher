@@ -7,7 +7,7 @@ let canvas = document.getElementById("mandelbrot");
 canvas.width  = window.innerWidth;
 canvas.height = window.innerHeight;
 let width  = canvas.width;
-let height = canvas.width;
+let height = canvas.height;
 let ctx = canvas.getContext('2d');
 
 function iterate(r,i,iterations) {
@@ -26,9 +26,6 @@ function render() {
 	for(let x=0; x < width; x++) {
 		for(let y=0; y < height; y++) {
 			let n = iterate(x/magnificationFactor-width/2/magnificationFactor-posX,y/magnificationFactor-height/2/magnificationFactor-posY,100);
-			if(x===width/2 && y===height/2) {
-				console.log("aaa");
-			}
 			if(n === 100) {
 				ctx.fillStyle = "rgb(0,0,0)";
 			} else {
