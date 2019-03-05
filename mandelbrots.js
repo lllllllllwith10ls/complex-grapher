@@ -29,7 +29,7 @@ function render() {
 			if(n >= 50) {
 				ctx.fillStyle = "rgb(0,0,0)";
 			} else {
-				ctx.fillStyle = "rgb("+Math.floor(255*n/100)+",255,255)";
+				ctx.fillStyle = "rgb("+Math.floor(255*n/100)+",0,0)";
 			}
 			ctx.fillRect(x,y,1,1);
 		} 
