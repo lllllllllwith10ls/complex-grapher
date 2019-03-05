@@ -27,9 +27,9 @@ function render() {
 		for(let y=0; y < height; y++) {
 			let n = iterate(x/magnificationFactor-width/2/magnificationFactor-posX,y/magnificationFactor-height/2/magnificationFactor-posY,100);
 			if(n === 100) {
-				ctx.fillStyle = "hsl(0,0,0)";
+				ctx.fillStyle = "rgb(0,0,0)";
 			} else {
-				ctx.fillStyle = "hsl(255,255,255)";
+				ctx.fillStyle = "rgb(255,255,255)";
 			}
 			ctx.fillRect(x,y,1,1);
 		} 
