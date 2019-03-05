@@ -1,4 +1,4 @@
-let escapeRadius = 10.0;
+let escapeRadius = 2;
 var magnificationFactor = 200;
 var posX = 0;
 var posY = 0;
@@ -26,7 +26,7 @@ function render() {
 	for(let x=0; x < width; x++) {
 		for(let y=0; y < height; y++) {
 			let n = iterate(x/magnificationFactor-width/2/magnificationFactor-posX,y/magnificationFactor-height/2/magnificationFactor-posY,100);
-			if(n === 100) {
+			if(n >= 100) {
 				ctx.fillStyle = "rgb(0,0,0)";
 			} else {
 				ctx.fillStyle = "rgb(255,255,255)";
