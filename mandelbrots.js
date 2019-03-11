@@ -107,14 +107,14 @@ function solveHelp2(eq,c,z) {
 	if(typeof eq[2] === "array") {
 		eq[2] = solveHelp2(eq[1],c,z);
 	}
-	if(!isNaN(parsInt(eq[1]))) {
+	if(!isNaN(parseInt(eq[1]))) {
 		if(eq[1][eq[1].length-1] === "i") {
 			eq[1] = new Complex(0,parseInt(eq[1]));
 		} else {
 			eq[1] = new Complex(parseInt(eq[1]),0);
 		}
 	}
-	if(!isNaN(parsInt(eq[2]))) {
+	if(!isNaN(parseInt(eq[2]))) {
 		if(eq[2][eq[2].length-1] === "i") {
 			eq[2] = new Complex(0,parseInt(eq[2]));
 		} else {
