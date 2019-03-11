@@ -22,7 +22,7 @@ function iterate(eq,r,i,iterations) {
 	return n;
 }
 function solve(eq,z,c) {
-	let eq = solveHelp(eq);
+	eq = solveHelp(eq);
 	return solveHelp2(eq,z,c);
 	
 }
