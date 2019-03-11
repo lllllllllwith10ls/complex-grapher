@@ -14,7 +14,6 @@ function iterate(eq,r,i,iterations) {
 	var z = Complex.zero;
 	var c = new Complex(r,i);
 	var n = 0;
-	eq = solveHelp(eq);
 	while(n < iterations && z.abs <= escapeRadius) {
 		n++; 
 		z = solve(eq,z,c);
@@ -196,6 +195,7 @@ function findComma(eq,num) {
 }
 function render(eq,iterations) {
 	
+	eq = solveHelp(eq);
 	for(let x=0; x < width; x++) {
 		for(let y=0; y < height; y++) {
 			let n = iterate(eq,x/magnificationFactor-width/2/magnificationFactor-posX,y/magnificationFactor-height/2/magnificationFactor-posY,iterations);
