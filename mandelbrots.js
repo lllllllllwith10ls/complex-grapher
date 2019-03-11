@@ -61,7 +61,7 @@ function solveHelp(eq) {
 	}
 	num = eq.indexOf("^");
 	if(num > -1) {
-		let array = eq.split(/\/(.+)/);
+		let array = eq.split(/\^(.+)/);
 		array[0] = solveHelp(array[0]);
 		array[1] = solveHelp(array[1]);
 		array.unshift("power");
