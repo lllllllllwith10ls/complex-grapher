@@ -14,17 +14,13 @@ function iterate(eq,r,i,iterations) {
 	var z = Complex.zero;
 	var c = new Complex(r,i);
 	var n = 0;
+	eq = solveHelp(eq);
 	while(n < iterations && z.abs <= escapeRadius) {
 		n++; 
 		z = solve(eq,z,c);
 	}
 
 	return n;
-}
-function solve(eq,z,c) {
-	eq = solveHelp(eq);
-	return solveHelp2(eq,z,c);
-	
 }
 function solveHelp(eq) {
 	let num = eq.indexOf("+");
@@ -100,7 +96,7 @@ function solveHelp(eq) {
 	return eq;
 	
 }
-function solveHelp2(eq,c,z) {
+function solve(eq,c,z) {
 	if(typeof eq[1] === "array") {
 		eq[1] = solveHelp2(eq[1],c,z);
 	}
