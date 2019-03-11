@@ -15,6 +15,9 @@ class Complex {
 	get recip() {
 		return new Complex(this.real/(this.real**2+this.im**2),-this.im/(this.real**2+this.im**2));
 	}
+	toString() {
+		return this.real+"+"+this.im+"i";
+	}
 	static add(a,b) {
 		return new Complex(a.real+b.real,a.im+b.im);
 	}
